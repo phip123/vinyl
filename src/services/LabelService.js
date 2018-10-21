@@ -1,8 +1,15 @@
 import {Label} from "../models/Label";
 import {platforms, Social} from "../models/Social";
+import {findById} from "./GenericService";
+import * as albumService from './AlbumService';
+
 
 export function getLabel(id) {
-  return labels.filter(l => l.id === id)
+  return findById(id,labels)
+}
+
+export function findLabelsForArtist(id) {
+  return [...new Set(albumService.getAlbumsForArtist(id).map(a => a.label))]
 }
 
 const labels = [

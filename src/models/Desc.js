@@ -1,6 +1,7 @@
-export default function Desc(text= "",source= "") {
+export default function Desc(text= "",source= "", sourceName="") {
   return {
     "text": text,
-    "source": source
+    "source": source,
+    "sourceName": sourceName
   }
 }

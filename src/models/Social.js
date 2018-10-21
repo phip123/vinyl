@@ -10,5 +10,9 @@ export const platforms = {
   sc: "sc",
   fb: "fb",
   insta: "insta",
-  bc: "bc"
+  bc: "bc",
+  generic: "gen",
+  text: "text",
+  yt: "youtube",
+  user: "user"
 };

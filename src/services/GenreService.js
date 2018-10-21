@@ -1,18 +1,16 @@
+import Genre from "../models/Genre";
+import * as albumService from "./AlbumService";
+
 export function getGenre(id) {
-  return genres.filter(g => g.id === id)
+  return genres.filter(g => g.id === id)[0]
+}
+
+export function getGenresForArtist(id) {
+  return [... new Set(albumService.getAlbumsForArtist(id).flatMap(a => {
+    return a.genres
+  }))]
 }
 
 const  genres = [
-  {
-    id: 1,
-    name: "Techno"
-  },
-  {
-    id: 2,
-    name: "Industrial"
-  },
-  {
-    id: 3,
-    name: "EBM"
-  }
+  Genre(1,"Techno"),Genre(2,"Industrial"), Genre(3,"EBM")
 ];
