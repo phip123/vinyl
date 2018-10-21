@@ -8,3 +8,4 @@ export function Label(id = -1, name = "-", discogsUrl = "-", bio = "-",socials= 
   }
 }
 
+export const EMPTY = Label();

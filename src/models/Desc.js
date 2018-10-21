@@ -5,3 +5,5 @@ export default function Desc(text= "",source= "", sourceName="") {
     "sourceName": sourceName
   }
 }
+
+export const EMPTY = Desc();

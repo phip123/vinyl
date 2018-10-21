@@ -9,10 +9,15 @@
 
         <header-description :desc="shortDesc"></header-description>
         <section class="content">
+          <b-taglist>
+            <tag-link v-for="genre in genres" :key="genre.id" :link="`/genre/${genre.id}`"
+                      :text="genre.name"></tag-link>
+            <tag-link :link="`/year/${year}`" :text="year.toString()"></tag-link>
+          </b-taglist>
 
           <b-collapse v-if="!back" :open="false">
             <div slot="trigger" slot-scope="props">
-              <genre-list class="card-header-title" :genres="genres"></genre-list>
+
 
               <a class="content">
                 <b-icon
@@ -28,7 +33,7 @@
           </b-collapse>
 
           <div v-else>
-            <genre-list class="card-header-title" :genres="genres"></genre-list>
+
             <review :desc="longDesc" :rating="rating"></review>
 
             <div class="container">
@@ -74,20 +79,18 @@
 </template>
 
 <script>
-import Artist from "../models/Artist";
-import {Label} from "../models/Label";
-import Desc from "../models/Desc";
 import {Social} from "../models/Social";
-import Link from "../models/Link";
 import BIcon from "buefy/src/components/icon/Icon";
-import GenreList from "./GenreList";
 import LinkList from "./LinkList";
 import Review from "./Review";
 import HeaderDescription from "./HeaderDescription";
+import {Album} from "../models/Album";
+import BTaglist from "buefy/src/components/tag/Taglist";
+import TagLink from "./TagLink";
 
 export default {
   name: "Album",
-  components: {HeaderDescription, Review, LinkList, GenreList, BIcon},
+  components: {TagLink, BTaglist, HeaderDescription, Review, LinkList, BIcon},
   props: {
     back: {
       type: Boolean,
@@ -98,20 +101,7 @@ export default {
     album: {
       type: Object,
       default: function () {
-        return {
-          id: 0,
-          artist: Artist(),
-          label: Label(),
-          name: "-",
-          title: "-",
-          genres: [],
-          year: "-",
-          shortDesc: Desc(),
-          longDesc: Desc(),
-          links: [],
-          discogsLink: Link(),
-          youtubeLink: Link()
-        }
+        return Album();
       }
     }
   },

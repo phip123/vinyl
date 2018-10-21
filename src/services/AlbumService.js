@@ -5,12 +5,14 @@ import {getLabel} from "./LabelService";
 import {getGenre} from "./GenreService";
 import {findById} from "./GenericService";
 import {platforms} from "../models/Social";
+import {Album} from "../models/Album";
 
 export function getAlbums() {
   return albums
 }
+
 export function getAlbum(id) {
-  return findById(id,albums)
+  return findById(id, albums)
 }
 
 export function getAlbumsForArtist(id) {
@@ -19,26 +21,27 @@ export function getAlbumsForArtist(id) {
 
 
 const albums = [
-  {
-    id: 1,
-    artist: getArtist(1),
-    label: getLabel(1),
-    title: "Dedicated To Sublimity",
-    genres: [getGenre(1), getGenre(2)],
-    year: 2018,
-    rating: 4.3,
-    shortDesc: Desc("Sophisticated industrial techno with booming club tools and atmospheric parts.","phip123.github.io","phip123") ,
-    longDesc: Desc(`E-Saggila returns after her EP 'Tools of my purpose' back to BANK Records and delivers an unique experience and a variety of sounds. Recommendation: Viper, which draws connections to hardcore and the last track 'Your Hole' with vocal mutations.`,"phip123.github.io","phip123"),
-    links: [
-      Link("Exclaim Review", "http://exclaim.ca/music/article/e-saggila-dedicated_to_sublimity",platforms.text),
-      Link("Noisey Interview", "https://noisey.vice.com/en_us/article/evkvv4/e-saggila-viper-dedicated-to-sublimity-stream",platforms.text),
-      Link("Viper", "https://www.youtube.com/watch?v=XbVlHBt-94A",platforms.yt),
-      Link(`Your Hole`,"https://www.youtube.com/watch?v=WuEfxgkOyHs", platforms.yt)
-    ],
-    discogsLink: Link("Discogs","https://www.discogs.com/E-Saggila-Dedicated-To-Sublimity/release/12268517"),
-    youtubeLink: Link("Youtube","https://www.youtube.com/watch?v=XbVlHBt-94A")
-  }
-];
+    Album(
+      1,
+      getArtist(1),
+      getLabel(1),
+      "Dedicated To Sublimity",
+      [getGenre(1), getGenre(2)],
+      2018,
+      4.3,
+      Desc("Sophisticated industrial techno with booming club tools and atmospheric parts.", "phip123.github.io", "phip123"),
+      Desc(`E-Saggila returns after her EP 'Tools of my purpose' back to BANK Records and delivers an unique experience and a variety of sounds. Recommendation: Viper, which draws connections to hardcore and the last track 'Your Hole' with vocal mutations.`, "phip123.github.io", "phip123"),
+      [
+        Link("Exclaim Review", "http://exclaim.ca/music/article/e-saggila-dedicated_to_sublimity", platforms.text),
+        Link("Noisey Interview", "https://noisey.vice.com/en_us/article/evkvv4/e-saggila-viper-dedicated-to-sublimity-stream", platforms.text),
+        Link("Viper", "https://www.youtube.com/watch?v=XbVlHBt-94A", platforms.yt),
+        Link(`Your Hole`, "https://www.youtube.com/watch?v=WuEfxgkOyHs", platforms.yt)
+      ],
+      Link("Discogs", "https://www.discogs.com/E-Saggila-Dedicated-To-Sublimity/release/12268517"),
+      Link("Youtube", "https://www.youtube.com/watch?v=XbVlHBt-94A")
+    )
+  ]
+;
 
 
 

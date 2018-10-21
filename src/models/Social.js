@@ -16,3 +16,6 @@ export const platforms = {
   yt: "youtube",
   user: "user"
 };
+
+
+export const EMTPY = Social();

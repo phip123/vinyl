@@ -7,3 +7,5 @@ export default function Link(text ="",link ="", platform = platforms.generic) {
     platform: platform
   }
 }
+
+export const EMPTY = Link();

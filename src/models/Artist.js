@@ -8,3 +8,5 @@ export default function Artist(id = -1,name = "-", discogsUrl = "-", bio= "-", s
     socials: socials
   }
 }
+
+export const EMPTY = Artist();

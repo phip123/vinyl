@@ -8,11 +8,19 @@
           <bio :bio="bio"></bio>
 
           <div class="content has-text-left">
-            <b-tag size="is-medium" type="is-dark">Labels:</b-tag>
             <b-taglist>
-              <b-tag v-for="label in labels" :key="label.id">
-                {{label.name}}
-              </b-tag>
+              <b-tag size="is-medium" type="is-dark">Labels:</b-tag>
+              <tag-link v-for="label in labels" :key="label.id" :link="`/label/${label.id}`" :text="label.name"></tag-link>
+            </b-taglist>
+            <b-taglist>
+              <b-tag size="is-medium" type="is-dark">Genres:</b-tag>
+              <tag-link v-for="genre in genres" :key="genre.id" :link="`/genre/${genre.id}`" :text="genre.name">
+
+              </tag-link>
+            </b-taglist>
+            <b-taglist>
+              <b-tag size="is-medium" type="is-dark">Albums:</b-tag>
+              <tag-link v-for="album in albums" :key="album.id" :link="`/album/${album.id}`" :text="album.title"></tag-link>
             </b-taglist>
 
 
@@ -58,11 +66,14 @@ import TextBlock from "./TextBlock";
 import Bio from "./Bio";
 import * as albumService from "../services/AlbumService";
 import * as labelService from "../services/LabelService";
+import * as genreService from "../services/GenreService";
 import BTaglist from "buefy/src/components/tag/Taglist";
+import TagLink from "./TagLink";
 
 export default {
   name: "Artist",
   components: {
+    TagLink,
     BTaglist,
     TextBlock,
     Review,
@@ -108,6 +119,9 @@ export default {
     },
     albums: function () {
       return albumService.getAlbumsForArtist(this.artist.id)
+    },
+    genres: function () {
+      return genreService.getGenresForArtist(this.artist.id)
     }
   },
   methods: {
