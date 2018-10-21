@@ -1,5 +1,6 @@
-export default function Artist(name = "-", discogsUrl = "-", bio= "-", socials = [],links = []) {
+export default function Artist(id = -1,name = "-", discogsUrl = "-", bio= "-", socials = [],links = []) {
   return {
+    id: id,
     name: name,
     discogsUrl: discogsUrl,
     bio: bio,

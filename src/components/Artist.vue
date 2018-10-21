@@ -11,7 +11,7 @@
             <b-tag size="is-medium" type="is-dark">Labels:</b-tag>
             <b-taglist>
               <b-tag v-for="label in labels" :key="label.id">
-                {{label.label.name}}
+                {{label.name}}
               </b-tag>
             </b-taglist>
 
@@ -86,22 +86,22 @@ export default {
   },
   computed: {
     links: function () {
-      return this.artist.artist.links;
+      return this.artist.links;
     },
     discogsLink: function () {
-      return this.artist.artist.discogsUrl;
+      return this.artist.discogsUrl;
     },
     name: function () {
-      return this.artist.artist.name;
+      return this.artist.name;
     },
     socials: function () {
-      return this.artist.artist.socials;
+      return this.artist.socials;
     },
     hasSocialMedia() {
       return this.socials.length > 0;
     },
     bio: function () {
-      return this.artist.artist.bio;
+      return this.artist.bio;
     },
     labels: function() {
       return labelService.findLabelsForArtist(this.artist.id)

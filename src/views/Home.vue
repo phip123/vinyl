@@ -14,7 +14,6 @@
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
 import AlbumList from "../components/AlbumList";
 import {getAlbums} from "../services/AlbumService";
 
@@ -22,8 +21,7 @@ import {getAlbums} from "../services/AlbumService";
 export default {
   name: 'home',
   components: {
-    AlbumList,
-    HelloWorld
+    AlbumList
   },
   data: function () {
     return {

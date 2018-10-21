@@ -100,7 +100,7 @@ export default {
       default: function () {
         return {
           id: 0,
-          artist: {id: 0, artist: Artist()},
+          artist: Artist(),
           label: Label(),
           name: "-",
           title: "-",
@@ -138,7 +138,7 @@ export default {
       return this.album.genres
     },
     artist: function () {
-      return this.album.artist.artist
+      return this.album.artist
     },
     rating: function () {
       return this.album.rating
