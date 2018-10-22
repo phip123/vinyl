@@ -1,10 +1,10 @@
-export function Label(id = -1, name = "-", discogsUrl = "-", bio = "-",socials= []) {
+export function Label(id = -1, name = "-", bio = "-", socials = [], links = []) {
   return {
     id: id,
     name: name,
-    discogsUrl: discogsUrl,
     bio: bio,
-    socials: socials
+    socials: socials,
+    links: links
   }
 }
 

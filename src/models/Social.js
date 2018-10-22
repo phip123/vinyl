@@ -14,7 +14,8 @@ export const platforms = {
   generic: "gen",
   text: "text",
   yt: "youtube",
-  user: "user"
+  user: "user",
+  album: "album"
 };
 
 

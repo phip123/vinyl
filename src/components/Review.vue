@@ -2,7 +2,7 @@
 
   <div class="content">
     <text-block>
-      <p style="padding: 2rem" class="has-text-weight-light has-text-left">{{desc.text}} <i><b>Rating: {{rating}}</b></i></p>
+      <p style="padding: 2rem" class="has-text-weight-light has-text-left"><span v-html="desc.text"></span> <i><b>Rating: {{rating}}</b></i></p>
     </text-block>
   </div>
 

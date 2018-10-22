@@ -30,7 +30,7 @@ const albums = [
       2018,
       4.3,
       Desc("Sophisticated industrial techno with booming club tools and atmospheric parts.", "phip123.github.io", "phip123"),
-      Desc(`E-Saggila returns after her EP 'Tools of my purpose' back to BANK Records and delivers an unique experience and a variety of sounds. Recommendation: Viper, which draws connections to hardcore and the last track 'Your Hole' with vocal mutations.`, "phip123.github.io", "phip123"),
+      Desc(`<a rel="noopener" href="#/artist/1">E-Saggila</a> returns after her EP 'Tools of my purpose' back to <a rel="noopener" href="#/label/1">BANK Records</a> and delivers an unique experience and a variety of sounds. Recommendation: Viper, which draws connections to hardcore and the last track 'Your Hole' with vocal mutations.`, "phip123.github.io", "phip123"),
       [
         Link("Exclaim Review", "http://exclaim.ca/music/article/e-saggila-dedicated_to_sublimity", platforms.text),
         Link("Noisey Interview", "https://noisey.vice.com/en_us/article/evkvv4/e-saggila-viper-dedicated-to-sublimity-stream", platforms.text),

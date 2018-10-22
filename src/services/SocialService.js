@@ -10,6 +10,7 @@ export function getIconForPlatform(platform) {
     case platforms.text: return "note-text";
     case platforms.yt: return "youtube-play";
     case platforms.user: return "account";
+    case platforms.album: return "album";
     default: return "link";
   }
 }
