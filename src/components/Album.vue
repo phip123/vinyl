@@ -62,7 +62,7 @@
       </a>
       <a target="_blank" rel="noopener" :href="youtubeLink.link" class="card-footer-item">
         <b-icon
-            icon="youtube-play"
+            icon="youtube"
             size="is-medium"></b-icon>
       </a>
       <router-link v-if="!back" class="card-footer-item" :to="`/album/${album.id}`">
