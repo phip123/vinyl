@@ -3,6 +3,7 @@ import {platforms, Social} from "../models/Social";
 import {findById} from "./GenericService";
 import * as albumService from './AlbumService';
 import Link from "../models/Link";
+import Bio from "../models/Bio";
 
 
 export function getLabel(id) {
@@ -17,7 +18,7 @@ const labels = [
   Label(
     1,
     "Bank Records NYC",
-    "New York based record label run by Entro Senestre", [
+    Bio("New York based record label run by Entro Senestre",  [Link("discogs","https://www.discogs.com/label/975964-BANK-Records-NYC")]), [
       Social("BANK on discogs", "https://www.discogs.com/label/975964-BANK-Records-NYC",platforms.album),
     Social("entro.senestre.bankrecords", "https://www.instagram.com/entro.senestre.bankrecords/", platforms.insta),
     Social("bankrecordsnyc", "https://www.facebook.com/bankrecordsnyc/", platforms.fb),
@@ -28,8 +29,8 @@ const labels = [
   ])
   ,
   Label(2, "Tripalium Records", "\n" +
-    "French label releasing acid, noise, techno, experimental, rave, braindance.\n" +
-    "The following are imprints of Tripalium Records: Acid Avengers Records, Tripalium Rave Series, Digital Mutant Series, Tripalium Podcast", [
+    Bio("French label releasing acid, noise, techno, experimental, rave, braindance.\n" +
+    "The following are imprints of Tripalium Records: Acid Avengers Records, Tripalium Rave Series, Digital Mutant Series, Tripalium Podcast",[Bio("discogs","https://www.discogs.com/label/776230-Tripalium-Records")]), [
       Social("discogs","https://www.discogs.com/label/776230-Tripalium-Records",platforms.album),
     Social("tripaliumcorp", "https://www.facebook.com/tripaliumcorp/", platforms.fb)
   ],[

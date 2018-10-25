@@ -9,13 +9,6 @@ Vue.config.productionTip = false
 
 Vue.use(Buefy)
 
-Vue.directive('tagify', {
-  // When the bound element is inserted into the DOM...
-  inserted: function (el) {
-    // Focus the element
-    el.focus()
-  }
-});
 
 new Vue({
   router,

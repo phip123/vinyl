@@ -1,7 +1,7 @@
 <template>
   <b-tag size="is-medium" type="is-primary">
     <router-link :to="link">
-      {{text}}
+      <slot></slot>
     </router-link>
   </b-tag>
 </template>
@@ -13,12 +13,6 @@ export default {
   name: "TagLink",
   components: {BTag},
   props: {
-    text: {
-      type: String,
-      default: function () {
-        return "-"
-      }
-    },
     link: {
       type: String,
       default: function () {

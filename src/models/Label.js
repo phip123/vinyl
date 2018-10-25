@@ -1,4 +1,6 @@
-export function Label(id = -1, name = "-", bio = "-", socials = [], links = []) {
+import Bio from "./Bio";
+
+export function Label(id = -1, name = "-", bio = Bio(), socials = [], links = []) {
   return {
     id: id,
     name: name,

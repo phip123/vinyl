@@ -1,7 +1,7 @@
 <template>
-  <text-block style="padding: 1rem">
+  <text-block class="padded">
     {{bio.text}}
-    <i>Sources: <a v-for="(link, index) in bio.sources" :key="index" :href="link.link">{{link.text}}</a></i>
+    <i v-if="bio.sources.length > 0">Sources: <a v-for="(link, index) in bio.sources" :key="index" :href="link.link">{{link.text}}</a></i>
   </text-block>
 </template>
 
@@ -23,5 +23,9 @@ export default {
 </script>
 
 <style scoped>
-
+.padded {
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
 </style>

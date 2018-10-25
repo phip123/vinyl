@@ -10,9 +10,12 @@
         <header-description :desc="shortDesc"></header-description>
         <section class="content">
           <b-taglist>
-            <tag-link v-for="genre in genres" :key="genre.id" :link="`/genre/${genre.id}`"
-                      :text="genre.name"></tag-link>
-            <tag-link :link="`/year/${year}`" :text="year.toString()"></tag-link>
+            <tag-link v-for="genre in genres" :key="genre.id" :link="`/genre/${genre.id}`">
+              {{genre.name}}
+            </tag-link>
+            <tag-link :link="`/year/${year}`">
+              {{year.toString()}}
+            </tag-link>
           </b-taglist>
 
           <b-collapse v-if="!back" :open="false">
