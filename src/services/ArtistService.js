@@ -3,10 +3,21 @@ import {platforms, Social} from "../models/Social";
 import {findById} from "./GenericService";
 import Link from "../models/Link";
 import Bio from "../models/Bio";
+import albumService from "./AlbumService";
 
 export function getArtist(id) {
   return findById(id, artists)
 }
+
+export function getArtistsForLabel(id) {
+  return getArtists().filter(a => albumService.getAlbumsForArtist(a.id).filter(alb => alb.label.id === Number(id)));
+}
+
+export function getArtists() {
+  return artists;
+}
+
+
 
 const artists = [
   Artist(1, "E-Saggila", "https://www.discogs.com/artist/4495678-E-Saggila", Bio("Rita Mikhael, Iraq-born, Toronto-based producer and live act. Fascinated by noise, industrial. Founded 2014 the label Summer Isle with Max Klebanoff, who does Death Kneel. Rita started the project as a way to produce more technical tracks and combined techno and industrial.", [Link("mixmag", "https://mixmag.net/feature/e-saggilas-fearless-electronic-music-and-commitment-to-the-diy-scene-is-making-an-impact")]), [

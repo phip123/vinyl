@@ -11,6 +11,12 @@ export function getGenresForArtist(id) {
   }))]
 }
 
+export function getGenresForLabel(id) {
+  return [... new Set(albumService.getAlbumsForLabel(id).flatMap(a => {
+    return a.genres
+  }))]
+}
+
 const  genres = [
   Genre(1,"Techno"),Genre(2,"Industrial"), Genre(3,"EBM")
 ];

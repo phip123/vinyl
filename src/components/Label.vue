@@ -4,12 +4,12 @@
       <p class="title is-4">{{name}}</p>
       <bio :bio="bio"></bio>
 
+      <tag-list entity="genre" description="Genres: " :list="genres"></tag-list>
+      <tag-list entity="artist" description="Artists: " :list="artists"></tag-list>
     </div>
     <footer class="card-footer">
       <social-link v-for="(social,index) in socials" :key="index" :social="social"></social-link>
 
-      <tag-list entity="genre" description="Genres: " :list="genres"></tag-list>
-      <tag-list entity="artist" description="Artists: " :list="artists"></tag-list>
 
       <router-link v-if="!back" class="card-footer-item" :to="`/label/${label.id}`">
         <b-icon
@@ -30,6 +30,9 @@ import SocialLink from "./SocialLink";
 import TextBlock from "./TextBlock";
 import Bio from "./Bio";
 import TagList from "./TagList";
+import genreService from "../services/GenreService";
+import artistService from "../services/ArtistService";
+
 export default {
   name: "Label",
   components: {

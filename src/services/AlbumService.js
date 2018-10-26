@@ -19,6 +19,10 @@ export function getAlbumsForArtist(id) {
   return getAlbums().filter(a => a.artist.id === Number(id))
 }
 
+export function getAlbumsForLabel(id) {
+  return getAlbums().filter(a => a.label.id === Number(id));
+}
+
 
 const albums = [
     Album(
